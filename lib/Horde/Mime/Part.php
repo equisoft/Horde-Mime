@@ -1578,7 +1578,7 @@ implements ArrayAccess, Countable, RecursiveIterator, Serializable
             $canonical = false;
         } elseif ($mailer instanceof Horde_Mail_Transport_Smtphorde) {
             try {
-                if ($mailer->getSMTPObject()->data_8bit) {
+                if ($mailer->getSMTPObject()->data_8bit ?? false) {
                     $encode |= self::ENCODE_8BIT;
                 }
             } catch (Horde_Mail_Exception $e) {}
